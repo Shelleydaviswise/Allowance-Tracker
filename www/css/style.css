@@ -1,0 +1,91 @@
+/*.card{
+  height:100px;
+}*/
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+.mainDiv{
+  padding-left:20px;
+  padding-top: 10px;
+}
+
+
+.locationDiv{
+  color: #bbb;
+}
+
+.quickInfo{
+  height: 85px;
+}
+.imageDiv{
+  height:100px;
+  width: 100px;
+  padding:10px;
+}
+.imgContent{
+
+}
+.quickTitle{
+  padding-top: 20px;
+/*padding-left: 20px;*/
+  text-align: center;
+}
+
+.likeCommentsCount{
+  width: 100%;
+}
+.moreInfoDiv{
+    height: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    overflow: auto;
+}
+.contentBody{
+  height:100%;
+  text-align:center;
+ /* padding-left:20px;*/
+  width:475px;
+  min-height: 100px;
+  /*max-height: 100px;*/
+  border:1px dotted red;
+  margin-left:20px;
+}
+
+.userImg{
+  height: 50px;
+  width: 50px;
+  border-radius:50px;
+
+}
+
+.container {
+  border:2px solid #ccc;
+  width:300px; height: 150px;
+  overflow-y: scroll;
+  margin-top: 40px;
+}
+
+.ion-input-select {
+  width:200px;
+  font-size:1rem;
+  text-indent:10px;
+  padding:.5rem 0;
+}

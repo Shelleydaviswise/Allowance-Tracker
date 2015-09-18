@@ -1,0 +1,7 @@
+bower_components
+data/
+.DS_Store
+node_modules
+lib/
+plugins/
+platforms/

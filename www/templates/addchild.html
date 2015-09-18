@@ -1,0 +1,44 @@
+
+<ion-view view-title="Add a Child">
+  <ion-content>
+    <form ng-submit="postData()">
+      <div class="list">
+        <ion-item class="item-divider">
+      <!--   <label class="item item-input">
+          <span class="input-label"></span>
+          <input type="text" >
+        </label> -->
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+          <input type="date" id="addDate">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" ng-model="newChild.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Allowance Amount</span>
+          <input type="text" ng-model="newChild.allowance">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Frequency</span>
+          <input type="text" ng-model="newChild.frequency">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Beginning Balance</span>
+          <input type="text" ng-model="newChild.balance">
+        </label>
+
+
+        <label class="item">
+         <img src="img/ionic.png" id="tempImage" width="75px">
+          <button type="button" class="button" ng-click="openPhotoLibrary()">Add a photo</button><br><br>
+  <!--         <img src="img/ionic.png" id="tempImage" width="50px"> -->
+        </label>
+        <label class="item">
+          <button type="button" class="button button-block button-positive" ng-click="postData()">Add</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

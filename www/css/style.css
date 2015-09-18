@@ -81,6 +81,11 @@ body {
   width:300px; height: 150px;
   overflow-y: scroll;
   margin-top: 40px;
+
+}
+
+.child-list {
+  text
 }
 
 .ion-input-select {

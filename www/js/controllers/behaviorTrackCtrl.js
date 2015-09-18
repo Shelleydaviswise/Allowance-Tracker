@@ -1,21 +1,26 @@
 app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray",
   function($scope, $firebaseArray) {
-    var behaviorlist;
-    var ref = new Firebase("https://allowance-tracker.firebaseio.com/behaviors");
-   $scope.behaviorlist = $firebaseArray(ref);
+    // var behaviorlist = "";
 
+    var kidsRef = new Firebase("https://allowance-tracker.firebaseio.com/children");
+    $scope.children = $firebaseArray(kidsRef);
 
-    $scope.behaviorModel = {
-      yelling: 0,
-      arguing: 0,
-      over2prompts: 0,
-      hitting:0,
-      lying:0,
-      fighting:0,
-      ignoring:0,
-      backtalk:0,
-      noncoop:0
-    };
+    console.log("children", $scope.children)
+
+//    $scope.behaviorlist = $firebaseArray(ref);
+
+// var ref = new Firebase("https://allowance-tracker.firebaseio.com/behaviors");
+//     $scope.behaviorModel = {
+//       yelling: 0,
+//       arguing: 0,
+//       over2prompts: 0,
+//       hitting:0,
+//       lying:0,
+//       fighting:0,
+//       ignoring:0,
+//       backtalk:0,
+//       noncoop:0
+//     };
 
 
 

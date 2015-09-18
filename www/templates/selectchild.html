@@ -1,0 +1,14 @@
+<ion-view view-title="Behaviors - Select the Child">
+  <ion-content>
+    <ion-item class="item-divider">
+      <div id = "child-list">
+        <label>Select Child</label>
+        <div class = "listofkids"ng-repeat='child in children'>
+          <a ng-href="/#/app/select/{{child.name}}">
+            <h1>{{child.name}}</h1>
+          </a>
+        </div>
+      </div>
+    </ion-item>
+  </ion-content>
+</ion-view>

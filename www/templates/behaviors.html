@@ -1,28 +1,18 @@
-<ion-view view-title="Log Behaviors">
+<ion-view view-title="Log Behaviors - Select the Child">
   <ion-content>
     <form ng-submit="postData()">
       <div class="list">
         <ion-item class="item-divider">
-        <div class = "select-child">
-          <label>
-          Select Child
-          <br />
-          <select class="ion-input-select">
-            <option ng-repeat= "child in children">{{children.name}}</option>
-
-          </select>
-          </label>
-        </div>
         <div class="container">
-          <input type="checkbox"  ng-model="behaviorModel.yelling" name="yelling" ng-true-value=".25" ng-false-value="0" />Yelling <br />
-          <input type="checkbox"  ng-model="behaviorModel.arguing" name="arguing" ng-true-value=".25" ng-false-value="0" />Arguing <br />
-          <input type="checkbox"  ng-model="behaviorModel.over2prompts" name=">2prompts" ng-true-value=".25" ng-false-value="0" />More than 2 Prompts <br />
-          <input type="checkbox"  ng-model="behaviorModel.hitting" name="hitting" ng-true-value=".25" ng-false-value="0" />Hitting <br />
-          <input type="checkbox"  ng-model="behaviorModel.lying" name="lying" ng-true-value="1" ng-false-value="0" />Lying <br />
-          <input type="checkbox"  ng-model="behaviorModel.fighting" name="fighting" ng-true-value="1" ng-false-value="0" />Fighting <br />
-          <input type="checkbox"  ng-model="behaviorModel.ignoring" name="ignoring" ng-true-value=".25" ng-false-value="0" />Ignoring Instructions <br />
-          <input type="checkbox"  ng-model="behaviorModel.backtalk" name="backtalk" ng-true-value=".25" ng-false-value="0" />Back talking <br />
-          <input type="checkbox"  ng-model="behaviorModel.noncoop" name="noncooperation" ng-true-value=".25" ng-false-value="0" />Not cooperating <br />
+          <input type="checkbox"  ng-model="behaviorModel.yelling" name="yelling" ng-true-value=".25" ng-false-value="0" />  Yelling <br />
+          <input type="checkbox"  ng-model="behaviorModel.arguing" name="arguing" ng-true-value=".25" ng-false-value="0" />  Arguing <br />
+          <input type="checkbox"  ng-model="behaviorModel.over2prompts" name=">2prompts" ng-true-value=".25" ng-false-value="0" />  More than 2 Prompts <br />
+          <input type="checkbox"  ng-model="behaviorModel.hitting" name="hitting" ng-true-value=".25" ng-false-value="0" />  Hitting <br />
+          <input type="checkbox"  ng-model="behaviorModel.lying" name="lying" ng-true-value="1" ng-false-value="0" />  Lying <br />
+          <input type="checkbox"  ng-model="behaviorModel.fighting" name="fighting" ng-true-value="1" ng-false-value="0" />  Fighting <br />
+          <input type="checkbox"  ng-model="behaviorModel.ignoring" name="ignoring" ng-true-value=".25" ng-false-value="0" />  Ignoring Instructions <br />
+          <input type="checkbox"  ng-model="behaviorModel.backtalk" name="backtalk" ng-true-value=".25" ng-false-value="0" />  Back talking <br />
+          <input type="checkbox"  ng-model="behaviorModel.noncoop" name="noncooperation" ng-true-value=".25" ng-false-value="0" />  Not cooperating <br />
         </div>
 
 

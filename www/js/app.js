@@ -17,7 +17,7 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider ) {
   $urlRouterProvider.otherwise('/app/home');
 
  $stateProvider
@@ -49,8 +49,18 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
         }
       }
     })
-        .state('app.track', {
-      url: '/track',
+    .state('app.select', {
+      url: '/select',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/selectchild.html',
+          controller: 'selectChildCtrl'
+
+        }
+      }
+    })
+    .state('app.track', {
+      url: '/select/:name',
       views: {
         'menuContent': {
           templateUrl: 'templates/behaviors.html',

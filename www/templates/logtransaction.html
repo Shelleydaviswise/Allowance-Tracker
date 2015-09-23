@@ -1,0 +1,26 @@
+
+<ion-view view-title="Add a Transaction">
+  <ion-content>
+    <form name = "addTransactionForm" ng-submit="postData()">
+      <div class="list">
+        <ion-item class="item-divider">
+        <label class="item item-input">
+            <span class="input-label"></span>
+            <input type="text">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Transaction Name</span>
+            <input type="text" ng-model="newBehavior.behaviorName">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Behavior Value</span>
+            <input type="text" ng-model="newBehavior.behaviorValue">
+          </label>
+          <label class="item">
+            <button type="button" class="button button-block button-positive" ng-click="postData()">Add To Behavior List</button>
+          </label>
+        </ion-item>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

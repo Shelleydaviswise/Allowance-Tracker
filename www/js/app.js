@@ -48,6 +48,15 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
 
         }
       }
+    }).state('app.addbehavior', {
+      url: '/addbehavior',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/addbehavior.html',
+          controller: 'addBehaviorCtrl'
+
+        }
+      }
     })
     .state('app.select', {
       url: '/select',
@@ -63,8 +72,28 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
       url: '/select/:name',
       views: {
         'menuContent': {
-          templateUrl: 'templates/behaviors.html',
+          templateUrl: 'templates/trackbehaviors.html',
           controller: 'behaviorTrackCtrl'
+
+        }
+      }
+    })
+    .state('app.selecttransact', {
+      url: '/transact',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/transactchild.html',
+          controller: 'transactChildCtrl'
+
+        }
+      }
+    })
+        .state('app.logtransact', {
+      url: '/transact/:name',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/logtransaction.html',
+          controller: 'logTransactionCtrl'
 
         }
       }

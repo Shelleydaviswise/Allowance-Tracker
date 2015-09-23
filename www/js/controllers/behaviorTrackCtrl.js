@@ -1,45 +1,46 @@
-app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray",
-  function($scope, $firebaseArray) {
-    // var behaviorlist = "";
+app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$stateParams","$filter",
+  function($scope, $firebaseArray, $stateParams, $filter) {
+   $scope.childName=$stateParams.name;
 
-    var kidsRef = new Firebase("https://allowance-tracker.firebaseio.com/children");
-    $scope.children = $firebaseArray(kidsRef);
-
-    console.log("children", $scope.children)
-
-//    $scope.behaviorlist = $firebaseArray(ref);
-
-// var ref = new Firebase("https://allowance-tracker.firebaseio.com/behaviors");
-//     $scope.behaviorModel = {
-//       yelling: 0,
-//       arguing: 0,
-//       over2prompts: 0,
-//       hitting:0,
-//       lying:0,
-//       fighting:0,
-//       ignoring:0,
-//       backtalk:0,
-//       noncoop:0
-//     };
+   // empty object to hold the checked values
+   $scope.recordedBehaviors={};
+    var behaviorListRef = new Firebase("https://allowance-tracker.firebaseio.com/");
+    $scope.behaviorList = $firebaseArray(behaviorListRef.child("behaviorlist"));
+    console.log("$scope.behaviorList",$scope.behaviorList )
+    $scope.newIncident = {};
 
 
+    $scope.newIncident = function () {
+      $scope.recordedBehaviors = $filter('filter')
+      ($scope.behaviorList, {checked : true});
 
-      $scope.postBehaviors = function() {
-        var behaviorValue = function() {
-         for (var i = 0; i < $behaviorModel.Items.Count; i++)
-         if ($behaviorModel.GetItemCheckState(i) == CheckState.Checked) {
-          behaviorValue.push(ng-true-value);
-          console.log("behaviorValue", behaviorValue);
-        }
-          // Do selected stuff
-        }
-        // else
-        //   // Do unselected stuff
-        // };
-        // $scope.newChild.timestamp.post = (new Date()).toLocaleString();
-        $scope.newBehavior.date_created = document.getElementById("addDate").value;
-        $scope.childlist.$add($scope.newChild);
+    }
 
+    $scope.newArray = [];
+    $scope.behaviorClicked = function(b) {
+      console.log(b.behaviorName);
+      var action = b.behaviorName;
+      var value = b.behaviorValue
+
+       $scope.newArray.push({ [action]: value});
+       // console.log($scope.newArray)
+    }
+
+  $scope.postIncident = function(name) {
+    // console.log("incidents fired")
+    var date = (new Date()).toLocaleString();
+      $scope.newIncident = {
+          infractionDate: date,
+          Childname: name,
+          incidents: $scope.newArray,
       }
-  }
-]);
+
+   var ref = new Firebase("https://allowance-tracker.firebaseio.com/incidents");
+   $scope.incidentList = $firebaseArray(ref);
+   $scope.incidentList.$add($scope.newIncident);
+
+}
+
+
+}]);
+

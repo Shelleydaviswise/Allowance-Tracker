@@ -1,8 +1,12 @@
-
-<ion-view view-title="Add a Transaction">
+<ion-view view-title="Log a Transaction">
   <ion-content>
-    <form name = "addTransactionForm" ng-submit="postData()">
-      <div class="list">
+    <form name = "logTransactionForm" >
+      <div>
+        <h2>{{childName}}</h2>
+      </div>
+      <br>
+    <label>Log a Transaction</label>
+       <div class="list">
         <ion-item class="item-divider">
         <label class="item item-input">
             <span class="input-label"></span>
@@ -10,14 +14,18 @@
           </label>
           <label class="item item-input">
             <span class="input-label">Transaction Name</span>
-            <input type="text" ng-model="newBehavior.behaviorName">
+            <input type="text" ng-model="newTransaction.transactionName">
           </label>
           <label class="item item-input">
-            <span class="input-label">Behavior Value</span>
-            <input type="text" ng-model="newBehavior.behaviorValue">
+            <span class="input-label">Transaction Value</span>
+            <input type="text" ng-model="newTransaction.transactionValue">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Notes</span>
+            <input type="text" ng-model="newTransaction.transactionNotes">
           </label>
           <label class="item">
-            <button type="button" class="button button-block button-positive" ng-click="postData()">Add To Behavior List</button>
+            <button type="button" class="button button-block button-positive" ng-click="postTransaction()">Add To Transaction List</button>
           </label>
         </ion-item>
       </div>

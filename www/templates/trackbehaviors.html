@@ -1,31 +1,22 @@
 <ion-view view-title="Select the Behavior">
   <ion-content>
-    <form ng-submit="postIncident(childName)">
+    <form>
       <div>
-        <h2>{{childName}}</h2>
+      <h2>{{childName}}</h2>
       </div>
       <br>
-    <label>Log Behavior</label>
-    <ion-item class="item-divider">
+      <label>Log Behavior</label>
+      <ion-item class="item-divider">
       <div id = "behavior-list">
         <div class = "listofbehaviors">
-
-        <div ng-repeat = 'behavior in behaviorList'>
-          <input type = "checkbox" name = '{{behavior.behaviorName}}' ng-model = "behavior.checked" ng-click="behaviorClicked(behavior)"> {{behavior.behaviorName}} ({{behavior.behaviorValue}})
-
-
-    <!--       <div ng-repeat='behavior in behaviorList' ng-init = "behavior.behaviorName; behavior.behaviorValue">
-
-
-           <input type="checkbox" ng-model = "recordedBehaviors[behavior.behaviorName]" ng-checked = "recordedBehaviors[behavior.behaviorName]"> {{behavior.behaviorName}}, ({{behavior.behaviorValue}})
-          </div> -->
+          <div ng-repeat = 'behavior in behaviorList'>
+            <input type = "checkbox" name = '{{behavior.behaviorName}}' ng-model = "behavior.checked" ng-click="behaviorClicked(behavior)"> {{behavior.behaviorName}} ({{behavior.behaviorValue}})
+          </div>
         </div>
       </div>
-    </ion-item>
-      <button type="submit" class="btn btn-danger btn-lg">Save Incident</button>
-
+      </ion-item>
+      <button ng-click = "postIncident()" type="submit" class="btn btn-danger btn-lg">Save Incident</button>
     </form>
   </ion-content>
-
 </ion-view>
 

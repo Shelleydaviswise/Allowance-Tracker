@@ -1,0 +1,21 @@
+<ion-view view-title="Child Detail">
+  <ion-content>
+    <form>
+      <div>
+      <h2>{{childName}}</h2>
+      </div>
+      <br>
+
+      <label>View Detail</label>
+      <ion-item class="item-divider">
+      <div id = "transaction-list">
+          <div class = "transaction-list" ng-repeat = 'transaction in transactions'>
+          </div>
+          <div class = "infraction-list" ng-repeat = "infraction in infractions">
+          </div>
+      </div>
+      </ion-item>
+    </form>
+  </ion-content>
+</ion-view>
+

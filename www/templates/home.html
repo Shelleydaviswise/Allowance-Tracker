@@ -3,26 +3,17 @@
     <div class="row">
       <div class="col-80 col-offset-10">
         <div class="list card" ng-repeat="child in children">
-          <div class="item item-avatar mainDiv" ng-click="togglePost(child)" ng-class="{active: isChildShown(child)}">
+          <div class="item item-avatar mainDiv">
             <div class="row">
-              <div class="col-33">
-                <!-- {{child.name}} -->
-              </div>
               <div class="col-33 col-offset-33 locationDiv">
-                {{child.balance}}
+              <a ng-href="/#/app/home/{{child.name}}">View Details</a>
               </div>
             </div>
-            <div class= "row quickInfo">
-              <div class="col-25 imageDiv">
-                <img class="imgContent" src="{{child.content.image}}" height="100%" width= "100%">
-              </div>
-              <div class="col-75 quickTitle">
-                <h1>{{child.name}}</h1>
-              </div>
+             <h1>{{child.name}}</h1>
             </div>
           </div>
 
-          <div class="item item-body item-accordion moreInfoDiv" ng-show="isChildShown(child)">
+          <div class="item item-body moreInfoDiv" ng-show="isChildShown(child)">
 
           </div>
         </div>

@@ -5,9 +5,10 @@
     "ionic": "driftyco/ionic-bower#1.1.0"
   },
   "dependencies": {
-    "firebase": "~2.2.9",
-    "angular-filter": "~0.5.5",
     "angucomplete-alt": "~1.1.0",
-    "angularfire": "~1.1.2"
+    "angular-filter": "~0.5.5",
+    "angularfire": "~1.1.2",
+    "firebase": "~2.2.9",
+    "moment": "~2.10.6"
   }
 }

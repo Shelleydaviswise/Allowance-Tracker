@@ -6,18 +6,14 @@
           <div class="item item-avatar mainDiv">
             <div class="row">
               <div class="col-33 col-offset-33 locationDiv">
-              <a ng-href="/#/app/home/{{child.name}}">View Details</a>
+              <a ng-href="/#/app/home/{{child.$id}}">{{child.name}}</a>
               </div>
             </div>
-             <h1>{{child.name}}</h1>
             </div>
           </div>
-
           <div class="item item-body moreInfoDiv" ng-show="isChildShown(child)">
-
           </div>
         </div>
       </div>
-    </div>
   </ion-content>
 </ion-view>

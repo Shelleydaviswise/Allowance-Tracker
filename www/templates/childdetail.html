@@ -1,19 +1,26 @@
-<ion-view view-title="Child Detail">
+<ion-view ng-init = "calculations()" view-title="Child Detail">
   <ion-content>
     <form>
       <div>
-      <h2>{{childName}}</h2>
+      <h2>{{child.name}} Detail View</h2>
       </div>
       <br>
-
-      <label>View Detail</label>
       <ion-item class="item-divider">
       <div id = "transaction-list">
-          <div class = "transaction-list" ng-repeat = 'transaction in transactions'>
+        <label>Transactions</label>
+          <div class = "transaction-list" ng-repeat = "transaction in transactions">
+            {{transactions.transactionDate}} {{transations.transactionNotes}} {{transactions.transactionValue}}
           </div>
-          <div class = "infraction-list" ng-repeat = "infraction in infractions">
+          <div>Transaction Total = ${{transactionTotal}}</div>
+          <br>
+        <label>Infractions</label>
+          <div class = "infraction-list" ng-repeat = "incident in incidents">
+          {{incident.infractionDate}}.....{{incident.infractionName}} .....{{incident.infractionValue}}
           </div>
+          <div>Infraction Total = ${{infractionTotal}}</div>
+          <div>Balance = ${{workingBalance}}</div>
       </div>
+
       </ion-item>
     </form>
   </ion-content>

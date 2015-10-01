@@ -1,12 +1,19 @@
-app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$stateParams","$filter",
-  function($scope, $firebaseArray, $stateParams, $filter) {
-   $scope.childName=$stateParams.name;
+app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject","$stateParams","$filter",
+  function($scope, $firebaseArray, $firebaseObject,$stateParams, $filter) {
+   $scope.childId=$stateParams.id;
+
+  console.log("StateParams",$stateParams);
+  var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" + $scope.childId);
+  $scope.child = $firebaseObject(childRef);
+  console.log("the child", $scope.child)
+  console.log("$scope.childId", $scope.childId);
 
    // empty object to hold the checked values
    $scope.recordedBehaviors={};
-    var behaviorListRef = new Firebase("https://allowance-tracker.firebaseio.com/");
-    $scope.behaviorList = $firebaseArray(behaviorListRef.child("behaviorlist"));
-    console.log("$scope.behaviorList",$scope.behaviorList )
+    var ref = new Firebase("https://allowance-tracker.firebaseio.com/");
+    $scope.behaviorList = $firebaseArray(ref.child("behaviorlist"));
+
+
     // empty object to hold filtered checked values
     $scope.newIncident = {};
 
@@ -22,14 +29,15 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$stateParams","
       var action = b.behaviorName;
       var value = b.behaviorValue
 
-      $scope.newArray.push({ "infractionName":action, "infractionValue":value});
-       // console.log($scope.newArray)
+      $scope.newArray.push({"infractionName":action, "infractionValue":value});
+       console.log($scope.newArray)
     }
 
  // Posting values collected to add incident with date and child name
   $scope.postIncident = function() {
    $scope.newIncident = {};
    var date = (new Date()).toLocaleString();
+
 
    var ref = new Firebase("https://allowance-tracker.firebaseio.com/incidents");
    $scope.incidentList = $firebaseArray(ref);
@@ -38,16 +46,13 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$stateParams","
       for (var i =0; i< $scope.newArray.length; i++){
         $scope.incidentList.$add({
           infractionDate: date,
-          name: $scope.childName,
+          childId:$scope.childId,
+          childName: $scope.child.name,
           infractionName: $scope.newArray[i].infractionName,
           infractionValue: $scope.newArray[i].infractionValue
         });
       }
-
-
-
 }
-
 
 }]);
 

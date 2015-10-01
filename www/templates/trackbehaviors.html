@@ -2,7 +2,7 @@
   <ion-content>
     <form>
       <div>
-      <h2>{{childName}}</h2>
+      <h2>{{child.name}}</h2>
       </div>
       <br>
       <label>Log Behavior</label>
@@ -10,7 +10,7 @@
       <div id = "behavior-list">
         <div class = "listofbehaviors">
           <div ng-repeat = 'behavior in behaviorList'>
-            <input type = "checkbox" name = '{{behavior.behaviorName}}' ng-model = "behavior.checked" ng-click="behaviorClicked(behavior)"> {{behavior.behaviorName}} ({{behavior.behaviorValue}})
+            <input type = "checkbox" name = '{{behavior.behaviorName}}' ng-model = "behavior.checked" ng-click="behaviorClicked(behavior)"> {{behavior.behaviorName}}       ({{behavior.behaviorValue}})
           </div>
         </div>
       </div>

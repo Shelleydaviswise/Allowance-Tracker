@@ -5,7 +5,7 @@ app.controller('transactChildCtrl', ["$scope", "$firebaseArray",
     var kidsRef = new Firebase("https://allowance-tracker.firebaseio.com/children");
     $scope.children = $firebaseArray(kidsRef);
 
-    console.log("children", $scope.children)
+    // console.log("children", $scope.children)
 
 
 

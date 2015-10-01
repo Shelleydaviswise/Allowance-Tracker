@@ -2,7 +2,7 @@
   <ion-content>
     <form name = "logTransactionForm" >
       <div>
-        <h2>{{childName}}</h2>
+        <h2>{{child.name}}</h2>
       </div>
       <br>
     <label>Log a Transaction</label>
@@ -14,15 +14,15 @@
           </label>
           <label class="item item-input">
             <span class="input-label">Transaction Name</span>
-            <input type="text" ng-model="newTransaction.transactionName">
+            <input type="text" name = "transactionName" ng-model="newTransaction.transactionName">
           </label>
           <label class="item item-input">
             <span class="input-label">Transaction Value</span>
-            <input type="text" ng-model="newTransaction.transactionValue">
+            <input type="text" name = "transactionValue" ng-model="newTransaction.transactionValue">
           </label>
           <label class="item item-input">
             <span class="input-label">Notes</span>
-            <input type="text" ng-model="newTransaction.transactionNotes">
+            <input type="text" name = "transactionNotes" ng-model="newTransaction.transactionNotes">
           </label>
           <label class="item">
             <button type="button" class="button button-block button-positive" ng-click="postTransaction()">Add To Transaction List</button>

@@ -1,23 +1,28 @@
-app.controller('logTransactionCtrl', ["$scope", "$firebaseArray","$stateParams",
-  function($scope, $firebaseArray, $stateParams) {
-    $scope.childName=$stateParams.name;
-    var transactionList;
-    var ref = new Firebase("https://allowance-tracker.firebaseio.com/transactions");
-   $scope.transactionList = $firebaseArray(ref);
-   var date = (new Date()).toLocaleString();
-    $scope.newTransaction = {
-      "name": $scope.childName,
-      "transactionDate": date,
-      "transactionName": "",
-      "transactionValue": "",
-      "transactionNotes": ""
+app.controller('logTransactionCtrl', ["$scope", "$firebaseArray", "$firebaseObject","$stateParams", function($scope, $firebaseArray, $firebaseObject, $stateParams) {
+        $scope.childId = $stateParams.id;
 
-    };
-    console.log("tlist", $scope.transactionList)
+        // Getting firebaseObject to access childId
+        var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" + $scope.childId);
+        $scope.child = $firebaseObject(childRef);
+        console.log("the child", $scope.child)
+        console.log("$scope.childId", $scope.childId);
 
-      $scope.postTransaction = function() {
-      $scope.transactionList.$add($scope.newTransaction);
-
-      }
-  }
+        var ref = new Firebase("https://allowance-tracker.firebaseio.com/transactions" + $scope.childId);
+        $scope.transactionList = $firebaseArray(ref);
+        // $scope.newTransaction = {};
+        var date = (new Date()).toLocaleString();
+           // $scope.postTransaction = function() {
+           //      $scope.transactionList.add({
+           //      "transactionDate" date,
+           //      "transactionName": "",
+           //      "transactionValue": "",
+           //      "transactionNotes": "",
+           //      "childId": $scope.childId,
+           //      "name"= $scope.child.name
+           //  });
+           //  // $scope.postTransaction = function() {
+           //  //   $scope.transactionList.$add($scope.newTransaction)
+        // };
+        console.log("tlist", $scope.transactionList)
+    }
 ]);

@@ -1,4 +1,4 @@
-<ion-view view-title="Behaviors - Select the Child">
+<!-- <i<!-- on-view view-title="Behaviors - Select the Child">
   <ion-content>
     <ion-item class="item-divider">
       <div id = "child-list">
@@ -10,5 +10,28 @@
         </div>
       </div>
     </ion-item>
+  </ion-content>
+ </ion-view> -->
+
+
+
+<ion-view view-title="Behaviors - Select the Child">
+  <ion-content>
+    <div class="row">
+      <div class="col-80 col-offset-10">
+        <div class="list card" ng-repeat="child in children">
+          <div class="item item-avatar mainDiv">
+            <div class="row">
+              <div class="col-33 col-offset-33 locationDiv">
+              <h2><a ng-href="/#/app/select/{{child.$id}}">{{child.name}}</a></h2>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="item item-body moreInfoDiv" ng-show="isChildShown(child)">
+          </div>
+        </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

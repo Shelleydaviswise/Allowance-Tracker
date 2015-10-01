@@ -40,7 +40,7 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
       }
     })
      .state('app.details', {
-      url: '/home/:name',
+      url: '/home/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/childdetail.html',
@@ -73,13 +73,12 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
       views: {
         'menuContent': {
           templateUrl: 'templates/selectchild.html',
-          controller: 'selectChildCtrl'
-
+          controller: 'mainCtrl'
         }
       }
     })
     .state('app.track', {
-      url: '/select/:name',
+      url: '/select/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/trackbehaviors.html',
@@ -93,13 +92,12 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
       views: {
         'menuContent': {
           templateUrl: 'templates/transactchild.html',
-          controller: 'transactChildCtrl'
-
+          controller: 'mainCtrl'
         }
       }
     })
         .state('app.logtransact', {
-      url: '/selecttransact/:name',
+      url: '/transact/:id',
       views: {
         'menuContent': {
           templateUrl: 'templates/logtransaction.html',

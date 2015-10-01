@@ -1,14 +1,13 @@
-app.controller('selectChildCtrl', ["$scope", "$firebaseArray",
-  function($scope, $firebaseArray) {
-    // var behaviorlist = "";
+app.controller('selectChildCtrl',
+  function($scope, $firebaseArray, $firebaseObject, $stateParams) {
 
-    var kidsRef = new Firebase("https://allowance-tracker.firebaseio.com/children");
-    $scope.children = $firebaseArray(kidsRef);
+var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children" );
+  $scope.children = $firebaseArray(childRef);
+   console.log("$scope.children", $scope.children)
+  // var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" );
+  // $scope.children = $firebaseArray(childRef);
 
-    console.log("children", $scope.children)
-
-
-
-
+    // var kidsRef = new Firebase("https://allowance-tracker.firebaseio.com/children");
+    // $scope.children = $firebaseObject(kidsRef);
       }
-]);
+);

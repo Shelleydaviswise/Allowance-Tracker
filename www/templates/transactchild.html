@@ -1,14 +1,21 @@
 <ion-view view-title="Transactions - Select the Child">
   <ion-content>
-    <ion-item class="item-divider">
-      <div id = "child-list">
-        <label>Select Child</label>
-        <div class = "listofkids"ng-repeat='child in children'>
-          <a ng-href="/#/app/selecttransact/{{child.name}}">
-            <h1>{{child.name}}</h1>
-          </a>
+    <div class="row">
+      <div class="col-80 col-offset-10">
+        <div class="list card" ng-repeat="child in children">
+          <div class="item item-avatar mainDiv">
+            <div class="row">
+              <div class="col-33 col-offset-33 locationDiv">
+              <h2><a ng-href="/#/app/transact/{{child.$id}}">{{child.name}}</a></h2>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="item item-body moreInfoDiv" ng-show="isChildShown(child)">
+          </div>
         </div>
       </div>
-    </ion-item>
+    </div>
   </ion-content>
 </ion-view>

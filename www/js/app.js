@@ -28,14 +28,12 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-
     .state('app.home', {
       url: '/home',
       views: {
         'menuContent': {
           templateUrl: 'templates/home.html',
           controller: 'mainCtrl'
-
         }
       }
     })
@@ -45,7 +43,6 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
         'menuContent': {
           templateUrl: 'templates/childdetail.html',
           controller: 'childDetailCtrl'
-
         }
       }
     })
@@ -64,7 +61,6 @@ var app = angular.module('AllowanceApp', ['ionic', 'firebase'])
         'menuContent': {
           templateUrl: 'templates/addbehavior.html',
           controller: 'addBehaviorCtrl'
-
         }
       }
     })

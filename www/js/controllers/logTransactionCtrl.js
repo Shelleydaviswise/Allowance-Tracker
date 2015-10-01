@@ -7,22 +7,22 @@ app.controller('logTransactionCtrl', ["$scope", "$firebaseArray", "$firebaseObje
         console.log("the child", $scope.child)
         console.log("$scope.childId", $scope.childId);
 
-        var ref = new Firebase("https://allowance-tracker.firebaseio.com/transactions" + $scope.childId);
+        var ref = new Firebase("https://allowance-tracker.firebaseio.com/transactions");
         $scope.transactionList = $firebaseArray(ref);
         // $scope.newTransaction = {};
-        var date = (new Date()).toLocaleString();
-           // $scope.postTransaction = function() {
-           //      $scope.transactionList.add({
-           //      "transactionDate" date,
-           //      "transactionName": "",
-           //      "transactionValue": "",
-           //      "transactionNotes": "",
-           //      "childId": $scope.childId,
-           //      "name"= $scope.child.name
-           //  });
-           //  // $scope.postTransaction = function() {
-           //  //   $scope.transactionList.$add($scope.newTransaction)
-        // };
+        // var now = new Date();
+        var date = moment().format("MM/DD/YY");
+              $scope.newTransaction = {
+                "transactionDate": date,
+                "transactionName": "",
+                "transactionValue": "",
+                "transactionNotes": "",
+                "childId": $scope.childId,
+                // "name":$scope.child.name
+            };
+            $scope.postTransaction = function() {
+              $scope.transactionList.$add($scope.newTransaction)
+        };
         console.log("tlist", $scope.transactionList)
     }
 ]);

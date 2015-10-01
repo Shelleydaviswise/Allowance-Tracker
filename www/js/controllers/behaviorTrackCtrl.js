@@ -36,7 +36,7 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject
  // Posting values collected to add incident with date and child name
   $scope.postIncident = function() {
    $scope.newIncident = {};
-   var date = (new Date()).toLocaleString();
+    var date = moment().format("MM/DD/YY");
 
 
    var ref = new Firebase("https://allowance-tracker.firebaseio.com/incidents");

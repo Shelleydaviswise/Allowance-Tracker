@@ -2,27 +2,43 @@
   <ion-content>
     <form>
       <div>
-        <h2>{{child.name}} Detail View</h2>
+        <h2>{{child.name}}</h2>
         <h3>Balance:  ${{availableBalance}}
       </div>
       <br>
       <ion-item class="item-divider">
-      <div id = "transaction-list">
+
         <label>Transactions</label>
-          <div class = "transaction-list" ng-repeat = "transaction in transactions">
-            {{transaction.transactionDate}} ...  {{transaction.transactionNotes}} {{transaction.transactionValue}}
-          </div>
-          <div>Transaction Total = ${{transactionTotal}}</div>
+        <div id = "detail-list">
+        <div class="row header">
+          <div class="col">Date</div>
+          <div class="col">Notes</div>
+          <div class="col">Value</div>
+        </div>
+        <div class="row" ng-repeat="transaction in transactions">
+          <div class="col repeated">{{transaction.transactionDate}}</div>
+          <div class="col repeated">{{transaction.transactionNotes}}</div>
+          <div class="col repeated">{{transaction.transactionValue}}</div>
+        </div>
+      </div>
+          <div class = "total">Transaction Total = ${{transactionTotal}}</div>
           <br>
-          </div>
-        <div id = "infraction-list">
+
         <label>Infractions</label>
-          <div class = "infraction-list" ng-repeat = "incident in incidents">
-          {{incident.infractionDate}}.....{{incident.infractionName}} .... ({{incident.infractionValue}})
+          <div id = "detail-list">
+          <div class="row header">
+            <div class="col">Date</div>
+            <div class="col">Incident</div>
+            <div class="col">Value</div>
           </div>
-          <div>Infraction Total = ${{infractionTotal}}</div>
+          <div class="row" ng-repeat="incident in incidents">
+            <div class="col repeated">{{incident.infractionDate}}</div>
+            <div class="col repeated">{{incident.infractionName}}</div>
+            <div class="col repeated">({{incident.infractionValue}})</div>
+          </div>
+          <div class = "total">Infraction Total  =  ${{infractionTotal}}</div>
           <br>
-          </div>
+        </div>
       </ion-item>
     </form>
   </ion-content>

@@ -10,12 +10,12 @@
       <div id = "behavior-list">
         <div class = "listofbehaviors">
           <div ng-repeat = 'behavior in behaviorList'>
-            <input type = "checkbox" name = '{{behavior.behaviorName}}' ng-model = "behavior.checked" ng-click="behaviorClicked(behavior)"> {{behavior.behaviorName}}       ({{behavior.behaviorValue}})
+            <input class = "checkboxes" type = "checkbox" name = '{{behavior.behaviorName}}' ng-model = "behavior.checked" ng-click="behaviorClicked(behavior)"> {{behavior.behaviorName}}       ({{behavior.behaviorValue}})
           </div>
         </div>
       </div>
       </ion-item>
-      <button ng-click = "postIncident()" type="submit" class="btn btn-danger btn-lg">Save Incident</button>
+      <button ng-click = "postIncident()" type="submit" class="button button-block button-calm">Save Incident</button>
     </form>
   </ion-content>
 </ion-view>

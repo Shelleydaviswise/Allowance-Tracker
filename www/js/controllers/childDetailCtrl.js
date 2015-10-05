@@ -1,6 +1,8 @@
-app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "$stateParams",
-    function($scope, $firebaseArray, $firebaseObject, $stateParams) {
+app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "$stateParams", "$state",
+    function($scope, $firebaseArray, $firebaseObject, $stateParams, $state) {
+
         $scope.childId = $stateParams.id;
+
 
 // Getting Firebase reference to perform incident calculations
         var incidentRef = new Firebase("https://allowance-tracker.firebaseio.com/incidents")
@@ -14,11 +16,12 @@ app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject"
             .equalTo($scope.childId);
         $scope.transactions = $firebaseObject(transactionRef);
         console.log($scope.transactions);
-// Getting Firebase reference to perform incident calculations
 
+// Getting Firebase reference to get access to the child object
         var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" + $scope.childId)
         $scope.child = $firebaseObject(childRef);
-
+         var transTotal = $scope.transactionTotal;
+         var infractTotal = $scope.infractionTotal;
         // $scope.calculations = function() {
             $scope.incidents.$loaded(function() {
                 $scope.infractionTotal = 0
@@ -39,7 +42,7 @@ app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject"
                 });
                 console.log($scope.transactionTotal)
                 return $scope.transactionTotal;
-            })
+            }) //me
 
             $scope.child.$loaded(function() {
                 $scope.startDate = $scope.child.date_created;
@@ -69,7 +72,7 @@ app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject"
                   };
                 console.log("Available Balance", $scope.availableBalance);
                     return $scope.availableBalance;
-            });
+            }); // the end
         }
     // }
 ]);

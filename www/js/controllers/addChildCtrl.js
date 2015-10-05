@@ -1,5 +1,9 @@
-app.controller('addChildCtrl', ["$scope", "$firebaseArray",
-    function($scope, $firebaseArray) {
+app.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "currentAuth",
+    function($scope, $firebaseArray, $firebaseObject, currentAuth) {
+        var uid = currentAuth.uid;
+        var ref = new Firebase("https://allowance-tracker.firebaseio.com");
+        $scope.user = $firebaseObject(ref.child('users').child(uid));
+
         var childList;
         var ref = new Firebase("https://allowance-tracker.firebaseio.com/children");
         $scope.childList = $firebaseArray(ref);

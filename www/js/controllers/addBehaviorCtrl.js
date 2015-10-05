@@ -1,5 +1,7 @@
-app.controller('addBehaviorCtrl', ["$scope", "$firebaseArray",
-    function($scope, $firebaseArray) {
+app.controller('addBehaviorCtrl', ["$scope", "$firebaseArray", "$firebaseObject",
+    function($scope, $firebaseArray, $fireaseObject) {
+
+
         var behaviorlist;
         var ref = new Firebase("https://allowance-tracker.firebaseio.com/behaviorlist");
         $scope.behaviorList = $firebaseArray(ref);

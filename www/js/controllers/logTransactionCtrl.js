@@ -1,4 +1,7 @@
 app.controller('logTransactionCtrl', ["$scope", "$firebaseArray", "$firebaseObject","$stateParams", function($scope, $firebaseArray, $firebaseObject, $stateParams) {
+
+
+
         $scope.childId = $stateParams.id;
 
         // Getting firebaseObject to access childId

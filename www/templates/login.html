@@ -1,4 +1,4 @@
-<ion-modal-view style="width: 50%; height: 90%; top: 5%; left: 25%; right: 25%; bottom: 5%;">
+<!-- <ion-modal-view style="width: 50%; height: 90%; top: 5%; left: 25%; right: 25%; bottom: 5%;">
   <ion-header-bar>
     <h1 class="title">iParent</h1>
     <div class="buttons">
@@ -7,7 +7,27 @@
   </ion-header-bar>
   <ion-content>
     <label class="item">
-      <button class="button button-block button-positive" ng-click="doLogin()">Log In With Email and Password</button>
+      <button class="button button-block button-calm" ng-click="doLogin()">Log In With Email and Password</button>
     </label>
   </ion-content>
-</ion-modal-view>
+</ion-modal-view> -->
+
+</ion-header-bar>
+
+<ion-view view-title = "Login" id="loginPage">
+  <ion-content>
+  <div class="list list-inset" id="loginForm">
+    <label class="item item-input">
+      <input type="email" ng-model="inputs.email" placeholder="Email">
+    </label>
+    <label class="item item-input">
+      <input type="password" ng-model="inputs.password" placeholder="Password">
+    </label>
+  </div>
+  <div class="buttonDiv">
+    <button class="button button-block button-calm " ng-click="login()" id="loginBtn">Submit</button>
+  </div>
+
+  <a nav-transition="none" href="#/app/createaccount">Create a New Account</a>
+  </ion-content>
+</ion-view>

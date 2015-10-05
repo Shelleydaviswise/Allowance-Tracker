@@ -5,8 +5,8 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject
   console.log("StateParams",$stateParams);
   var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" + $scope.childId);
   $scope.child = $firebaseObject(childRef);
-  console.log("the child", $scope.child)
-  console.log("$scope.childId", $scope.childId);
+  // console.log("the child", $scope.child)
+  // console.log("$scope.childId", $scope.childId);
 
    // empty object to hold the checked values
    $scope.recordedBehaviors={};

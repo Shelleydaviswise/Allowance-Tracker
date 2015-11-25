@@ -15,7 +15,7 @@
           <div class="col">Notes</div>
           <div class="col">Value</div>
         </div>
-        <div class="row" ng-repeat="transaction in transactions">
+        <div class="row col-detail" ng-repeat="transaction in transactions">
           <div class="col repeated">{{transaction.transactionDate}}</div>
           <div class="col repeated">{{transaction.transactionNotes}}</div>
           <div class="col repeated">{{transaction.transactionValue}}</div>
@@ -31,7 +31,7 @@
             <div class="col">Incident</div>
             <div class="col">Value</div>
           </div>
-          <div class="row" ng-repeat="incident in incidents">
+          <div class="row col-detail" ng-repeat="incident in incidents">
             <div class="col repeated">{{incident.infractionDate}}</div>
             <div class="col repeated">{{incident.infractionName}}</div>
             <div class="col repeated">({{incident.infractionValue}})</div>

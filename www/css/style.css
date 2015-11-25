@@ -21,11 +21,14 @@ label {
   font-weight: 700;
 }
 
-.detail-list {
+#detail-list {
   height: 150px;
   overflow: scroll;
 }
 
-
+.col-detail:nth-child(even){
+  background-color: lightgray;
+  margin: 5px 0 5px 0;
+}
 
 

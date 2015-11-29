@@ -1,4 +1,4 @@
-app.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "currentAuth",
+aapp.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "currentAuth",
     function($scope, $firebaseArray, $firebaseObject, currentAuth) {
         var uid = currentAuth.uid;
         var ref = new Firebase("https://allowance-tracker.firebaseio.com");

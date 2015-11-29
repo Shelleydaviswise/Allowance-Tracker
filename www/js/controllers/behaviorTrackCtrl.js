@@ -52,7 +52,7 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject
           infractionValue: $scope.newArray[i].infractionValue
         });
       }
-}
+  }
 
 }]);
 

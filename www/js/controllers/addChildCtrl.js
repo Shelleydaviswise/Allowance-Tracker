@@ -1,11 +1,11 @@
-aapp.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "currentAuth",
+app.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "currentAuth",
     function($scope, $firebaseArray, $firebaseObject, currentAuth) {
         var uid = currentAuth.uid;
-        var ref = new Firebase("https://allowance-tracker.firebaseio.com");
+        var ref = new Firebase("https://allowancetrackapp.firebaseio.com/");
         $scope.user = $firebaseObject(ref.child('users').child(uid));
 
         var childList;
-        var ref = new Firebase("https://allowance-tracker.firebaseio.com/children");
+        var ref = new Firebase("https://allowancetrackapp.firebaseio.com/children");
         $scope.childList = $firebaseArray(ref);
         var date = Date.now();
 

@@ -3,14 +3,14 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject
    $scope.childId=$stateParams.id;
 
   console.log("StateParams",$stateParams);
-  var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" + $scope.childId);
+  var childRef = new Firebase("https://allowancetrackapp.firebaseio.com/children/" + $scope.childId);
   $scope.child = $firebaseObject(childRef);
   // console.log("the child", $scope.child)
   // console.log("$scope.childId", $scope.childId);
 
    // empty object to hold the checked values
    $scope.recordedBehaviors={};
-    var ref = new Firebase("https://allowance-tracker.firebaseio.com/");
+    var ref = new Firebase("https://allowancetrackapp.firebaseio.com/");
     $scope.behaviorList = $firebaseArray(ref.child("behaviorlist"));
 
 
@@ -39,7 +39,7 @@ app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject
     var date = moment().format("MM/DD/YY");
 
 
-   var ref = new Firebase("https://allowance-tracker.firebaseio.com/incidents");
+   var ref = new Firebase("https://allowancetrackapp.firebaseio.com/incidents");
    $scope.incidentList = $firebaseArray(ref);
     // console.log("incidents fired", $scope.incidentList);
 

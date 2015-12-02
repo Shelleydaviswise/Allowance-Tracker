@@ -6,14 +6,14 @@ app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject"
 // Getting Firebase reference to perform incident calculations
 // Getting Firebase reference to perform transaction calculations
 // Getting Firebase reference to get access to the child object
-        var childRef = new Firebase("http://allowance-tracker.firebaseio.com/children/" + $scope.childId)
+        var childRef = new Firebase("https://allowancetrackapp.firebaseio.com/children/" + $scope.childId)
         $scope.child = $firebaseObject(childRef);
          var transTotal = $scope.transactionTotal;
          var infractTotal = $scope.infractionTotal;
 
 
          var getInfractions = function(child) {
-          var incidentRef = new Firebase("https://allowance-tracker.firebaseio.com/incidents")
+          var incidentRef = new Firebase("https://allowancetrackapp.firebaseio.com/incidents")
             .orderByChild("childId")
             .equalTo($scope.childId);
 
@@ -41,7 +41,7 @@ app.controller('childDetailCtrl', ["$scope", "$firebaseArray", "$firebaseObject"
 
 
           var getTransactions = function(child){
-            var transactionRef = new Firebase("https://allowance-tracker.firebaseio.com/transactions")
+            var transactionRef = new Firebase("https://allowancetrackapp.firebaseio.com/transactions")
                   .orderByChild("childId")
                   .equalTo($scope.childId);
 

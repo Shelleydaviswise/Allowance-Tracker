@@ -1,5 +1,5 @@
 app.controller('createAccountCtrl', function($scope, $state) {
-    var ref = new Firebase("https://allowance-tracker.firebaseio.com/");
+    var ref = new Firebase("https://allowancetrackapp.firebaseio.com/");
     $scope.inputs = {};
 
     $scope.create = function() {

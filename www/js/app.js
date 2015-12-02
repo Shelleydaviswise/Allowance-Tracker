@@ -13,23 +13,22 @@ app.run(function($ionicPlatform) {
 })
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/app');
+$urlRouterProvider.otherwise('/app');
 
   $stateProvider
 
     .state('app', {
     url: '/app',
-    abstract: true,
     templateUrl: 'templates/menu.html',
-    controller: 'mainCtrl',
-    resolve: {
+    controller: 'mainCtrl'
+    // resolve: {
       // controller will not be loaded until $waitForAuth resolves
       // Auth refers to our $firebaseAuth wrapper in the example above
-      "currentAuth": ["Auth", function(Auth) {
+      // "currentAuth": ["Auth", function(Auth) {
         // $waitForAuth returns a promise so the resolve waits for it to complete
-        return Auth.$requireAuth();
-      }]
-    }
+        // return Auth.$requireAuth();
+      // }]
+    // }
   })
 
   .state('app.home', {
@@ -41,24 +40,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       }
     })
-    .state('app.login', {
-      url: '/login',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/login.html',
-          controller: 'loginCtrl'
-        }
-      }
-    })
-    .state('app.create', {
-      url: '/createaccount',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/createaccount.html',
-          controller: 'createAccountCtrl'
-        }
-      }
-    })
+    // .state('app.login', {
+    //   url: '/login',
+    //   views: {
+    //     'menuContent': {
+    //       templateUrl: 'templates/login.html',
+    //       controller: 'loginCtrl'
+    //     }
+    //   }
+    // })
+    // .state('app.create', {
+    //   url: '/createaccount',
+    //   views: {
+    //     'menuContent': {
+    //       templateUrl: 'templates/createaccount.html',
+    //       controller: 'createAccountCtrl'
+    //     }
+    //   }
+    // })
     .state('app.details', {
       url: '/home/:id',
       views: {

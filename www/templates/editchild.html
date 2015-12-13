@@ -1,0 +1,17 @@
+<ion-view view-title="DeleteChild">
+  <ion-content>
+    <div class="row">
+      <div class="col-80 col-offset-10">
+        <div class="list card" ng-repeat="child in children">
+          <div class="item item-avatar">
+            <div class="row">
+              <a ng-href="/#/app/home/{{child.$id}}"><h2>{{child.name}}</h2></a>
+                <button type="button" class="button button-block button-calm" ng-click="deleteChild(oneChild)">Delete</button>
+                <button type="button" class="button button-block button-calm" ng-click="editChild(oneChild)">Edit</button>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </ion-content>
+</ion-view>

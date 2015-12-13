@@ -124,5 +124,24 @@ $urlRouterProvider.otherwise('/app');
         }
       }
     })
+       .state('app.selectchild', {
+      url: '/selectchild',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/selectchild.html',
+          controller: 'mainCtrl'
+        }
+      }
+    })
+    .state('app.editchild', {
+      url: '/selectchild/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/editchild.html',
+          controller: 'editChildCtrl'
+
+        }
+      }
+    })
 
 });

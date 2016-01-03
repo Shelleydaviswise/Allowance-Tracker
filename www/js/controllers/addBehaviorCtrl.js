@@ -1,8 +1,5 @@
-angular.module('AllowanceApp.addBehaviorCtrl', ['firebase'])
-
 app.controller('addBehaviorCtrl', ["$scope", "$firebaseArray", "$firebaseObject",
     function($scope, $firebaseArray, $fireaseObject) {
-
 
         var behaviorlist;
         var ref = new Firebase("https://allowancetrackapp.firebaseio.com/behaviorlist");
@@ -11,14 +8,13 @@ app.controller('addBehaviorCtrl', ["$scope", "$firebaseArray", "$firebaseObject"
         $scope.newBehavior = {
             "behaviorName": "",
             "behaviorValue": ""
-
         };
-        console.log("behaviorlist", $scope.behaviorList)
+
+        // console.log("behaviorlist", $scope.behaviorList)
 
         $scope.postData = function() {
             // $scope.newChild.timestamp.post = (new Date()).toLocaleString();
             $scope.behaviorList.$add($scope.newBehavior);
-
         }
     }
 ]);

@@ -1,4 +1,5 @@
-app.controller('createAccountCtrl', function($scope, $state) {
+app.controller('createAccountCtrl', ['$scope', '$state',
+  function($scope, $state) {
     var ref = new Firebase("https://allowancetrackapp.firebaseio.com/");
     $scope.inputs = {};
 
@@ -16,4 +17,4 @@ app.controller('createAccountCtrl', function($scope, $state) {
             }
           });
         }
-      });
+      }]);

@@ -1,5 +1,5 @@
 app.controller('behaviorTrackCtrl', ["$scope", "$firebaseArray","$firebaseObject","$stateParams","$filter",
-  function($scope, $firebaseArray, $firebaseObject,$stateParams, $filter) {
+  function($scope, $firebaseArray, $firebaseObject, $stateParams, $filter) {
    $scope.childId=$stateParams.id;
 
   console.log("StateParams",$stateParams);

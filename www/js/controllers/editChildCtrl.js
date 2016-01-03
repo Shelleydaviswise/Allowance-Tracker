@@ -13,7 +13,5 @@ app.controller('editChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", 
         $scope.deleteChild = function(oneChild) {
           $scope.childList.$remove(oneChild);
         };
-
-
     }
 ]);

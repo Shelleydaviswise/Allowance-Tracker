@@ -1,8 +1,9 @@
-app.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "currentAuth",
-    function($scope, $firebaseArray, $firebaseObject, currentAuth) {
-        var uid = currentAuth.uid;
-        var ref = new Firebase("https://allowancetrackapp.firebaseio.com/");
-        $scope.user = $firebaseObject(ref.child('users').child(uid));
+app.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject",
+    function($scope, $firebaseArray, $firebaseObject) {
+        // var uid = currentAuth.uid;
+        // will need to add current auth back to the dependencies list and function arguments
+        // var ref = new Firebase("https://allowancetrackapp.firebaseio.com/");
+        // $scope.user = $firebaseObject(ref.child('users').child(uid));
 
         var childList;
         var ref = new Firebase("https://allowancetrackapp.firebaseio.com/children");
@@ -23,6 +24,7 @@ app.controller('addChildCtrl', ["$scope", "$firebaseArray", "$firebaseObject", "
 
             // $scope.newChild.date_created = document.getElementById("addDate").value;
             $scope.childList.$add($scope.newChild);
+
         }
 
     }

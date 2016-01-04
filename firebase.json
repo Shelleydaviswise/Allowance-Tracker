@@ -1,0 +1,9 @@
+{
+  "firebase": "allowancetrackapp",
+  "public": "NSS_Capstone_Project",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

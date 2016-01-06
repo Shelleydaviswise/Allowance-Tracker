@@ -1,4 +1,9 @@
 {
   "name": "AllowanceApp",
-  "app_id": "d0711e20"
+  "app_id": "d0711e20",
+  "documentRoot": "www",
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib.**/*"
+  ]
 }

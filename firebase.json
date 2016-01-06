@@ -1,6 +1,6 @@
 {
   "firebase": "allowancetrackapp",
-  "public": "NSS_Capstone_Project",
+  "public": "www",
   "ignore": [
     "firebase.json",
     "**/.*",

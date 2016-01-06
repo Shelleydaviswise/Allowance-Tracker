@@ -14,9 +14,10 @@ app.controller('logTransactionCtrl', ["$scope", "$firebaseArray", "$firebaseObje
         $scope.transactionList = $firebaseArray(ref);
         // $scope.newTransaction = {};
         // var now = new Date();
-        var date = moment().format("MM/DD/YY");
+        var date = new Date();
+        transDate = date.toDateString();
               $scope.newTransaction = {
-                "transactionDate": date,
+                "transactionDate": transDate,
                 "transactionName": "",
                 "transactionValue": "",
                 "transactionNotes": "",
@@ -25,6 +26,7 @@ app.controller('logTransactionCtrl', ["$scope", "$firebaseArray", "$firebaseObje
             };
             $scope.postTransaction = function() {
               $scope.transactionList.$add($scope.newTransaction)
+
         };
         console.log("tlist", $scope.transactionList)
     }
